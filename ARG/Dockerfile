@@ -1,4 +1,4 @@
-ARG version
+ARG version=${version:-9}
 FROM almalinux:$version
 
 ARG name
