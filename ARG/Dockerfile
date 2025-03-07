@@ -8,4 +8,4 @@ RUN echo "cicd: $cicd, cloud:$cloud, name: ${name}"
 ENV cicd=$cicd \
     cloud=$cloud
 # CMD [ "echo", "cicd: $cicd, cloud:$cloud, name:${name}"]
-CMD [ "sleep" "100"]
+CMD [ "sleep", "100"]
