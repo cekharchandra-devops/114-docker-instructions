@@ -5,7 +5,7 @@ ARG name
 
 ARG cicd="jenkins" \
     cloud="aws"
-RUN echo "cicd: $cicd, cloud:$cloud, name: ${name}"
+RUN echo "cicd: $cicd, cloud:$cloud, name: ${name}, version: $version"
 ENV cicd=$cicd \
     cloud=$cloud
 # CMD [ "echo", "cicd: $cicd, cloud:$cloud, name:${name}"]
