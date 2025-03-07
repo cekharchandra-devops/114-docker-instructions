@@ -15,14 +15,8 @@ FROM almalinux:9
 # Install Nginx  
 RUN dnf install nginx -y  
 
-# Create a new user  
+# Create a non-root user  
 RUN useradd -m dtuser  
 
-# Replace 'user nginx;' with 'user dtuser;' in the Nginx config  
-RUN sed -i 's/^user .*/user dtuser;/' /etc/nginx/nginx.conf  
-
-# Switch to non-root user  
-USER dtuser  
-
-# Start Nginx  
-CMD ["nginx", "-g", "daemon off;"]
+# Start Nginx as root but switch to dtuser internally  
+CMD ["nginx", "-g", "daemon off; user dtuser; worker_processes auto;"]
